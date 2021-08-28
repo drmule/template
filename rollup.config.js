@@ -7,6 +7,7 @@ import css from 'rollup-plugin-css-only';
 import sveltePreprocess  from 'svelte-preprocess'; //added
 import image from '@rollup/plugin-image'; // added 
 import json from "@rollup/plugin-json"; // added
+import { nodeResolve } from '@rollup/plugin-node-resolve'; //added
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -40,6 +41,9 @@ export default {
 		file: 'public/build/bundle.js'
 	},
 	plugins: [
+		json(), // added
+		image(), //added
+		nodeResolve(),
 		svelte({
 			compilerOptions: {
 				// enable run-time checks when not in production
