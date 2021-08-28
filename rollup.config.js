@@ -4,6 +4,9 @@ import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
+import sveltePreprocess  from 'svelte-preprocess'; //added
+import image from '@rollup/plugin-image'; // added 
+import json from "@rollup/plugin-json"; // added
 
 const production = !process.env.ROLLUP_WATCH;
 
